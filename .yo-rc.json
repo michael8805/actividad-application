@@ -42,7 +42,9 @@
     "jwtSecretKey": "ZTc1M2ViYjA4ODM3NTZkYTRhMDdiYmRlNzIxMmY1MGFkZDAyZmEyODYwMTZjOGIyMWFhNzBjNTkzNzhhOGJjNjcxNDU5ODNmMzY1MTM5NGRhY2YxZTE0MzlmMjEwMjAwZTIwNmQxYmNiZjM0NzZiZDk5NTE5MDU0M2MzNGJhMjA=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Cliente", "Producto", "Venta"],
+    "lastLiquibaseTimestamp": 1617635473000
   },
   "git-provider": "GitHub",
   "git-company": "michael8805",

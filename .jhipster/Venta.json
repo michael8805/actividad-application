@@ -1,0 +1,47 @@
+{
+  "name": "Venta",
+  "fields": [
+    {
+      "fieldName": "idventa",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "idCliente",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "idProducto",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "venta",
+      "relationshipName": "idCliente",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "producto",
+      "otherEntityRelationshipName": "venta",
+      "relationshipName": "idProducto",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "venta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210405151113"
+}

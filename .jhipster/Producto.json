@@ -1,0 +1,28 @@
+{
+  "name": "Producto",
+  "fields": [
+    {
+      "fieldName": "idproducto",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "producto",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210405151112"
+}
