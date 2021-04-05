@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-venta-heading" data-cy="VentaCreateUpdateHeading" jhiTranslate="actividadApp.venta.home.createOrEditLabel">
+        Create or edit a Venta
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.idventa" for="field_idventa">Idventa</label>
+          <input type="number" class="form-control" name="idventa" id="field_idventa" data-cy="idventa" formControlName="idventa" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.cantidad" for="field_cantidad">Cantidad</label>
+          <input type="number" class="form-control" name="cantidad" id="field_cantidad" data-cy="cantidad" formControlName="cantidad" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.idCliente" for="field_idCliente">Id Cliente</label>
+          <input type="number" class="form-control" name="idCliente" id="field_idCliente" data-cy="idCliente" formControlName="idCliente" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.idProducto" for="field_idProducto">Id Producto</label>
+          <input
+            type="number"
+            class="form-control"
+            name="idProducto"
+            id="field_idProducto"
+            data-cy="idProducto"
+            formControlName="idProducto"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.idCliente" for="field_idCliente">Id Cliente</label>
+          <select class="form-control" id="field_idCliente" data-cy="idCliente" name="idCliente" formControlName="idCliente">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="clienteOption.id === editForm.get('idCliente')!.value?.id ? editForm.get('idCliente')!.value : clienteOption"
+              *ngFor="let clienteOption of idClientesCollection; trackBy: trackClienteById"
+            >
+              {{ clienteOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="actividadApp.venta.idProducto" for="field_idProducto">Id Producto</label>
+          <select class="form-control" id="field_idProducto" data-cy="idProducto" name="idProducto" formControlName="idProducto">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="productoOption.id === editForm.get('idProducto')!.value?.id ? editForm.get('idProducto')!.value : productoOption"
+              *ngFor="let productoOption of idProductosCollection; trackBy: trackProductoById"
+            >
+              {{ productoOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

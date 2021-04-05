@@ -1,0 +1,25 @@
+entity Cliente {
+idcliente Integer, 
+nombre String,
+direccion String, 
+telefono String, 
+ciudad String 
+}
+
+entity Producto {
+idproducto Integer, 
+descripcion String, 
+precio Float
+}
+
+entity Venta {
+idventa Integer, 
+cantidad Integer, 
+idCliente Integer, 
+idProducto Integer
+}
+
+relationship OneToOne {
+	Venta{idCliente} to Cliente,
+	Venta{idProducto} to Producto
+}
